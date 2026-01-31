@@ -19,6 +19,12 @@ func main() {
 	}
 
 	fmt.Println(user)
+
+	update(&user,23)
+
+	fmt.Println("After Updaing",user)
+
+
 }
 
 
@@ -26,6 +32,10 @@ func add(a int,b int ) int {
 	return a + b
 }
 
+
+func update(user *User ,age int)  {    //updating with pointer
+	user.Age = age
+}
 
 type User struct {   // a blue print 
 	Name string
