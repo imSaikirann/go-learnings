@@ -3,10 +3,16 @@ package main
 import (
 	"fmt"
 	"go-server/greetings"
+	"log"
+	
 )
 
 
 func main() {
-	message:= greetings.Hello("Sai Kiran")
+	message, err := greetings.Hello("")
+
+	if err != nil {
+		log.Fatal(err)
+	}
 	fmt.Println(message)
 }
