@@ -5,6 +5,7 @@ import (
 	"net/http"
 )
 
+import "rsc.io/quote"
 func helloHandler(w http.ResponseWriter, r *http.Request) {
 
 	resultCh := make(chan int64)
@@ -25,6 +26,6 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 func main() {
 	http.HandleFunc("/hello", helloHandler)
 
-	fmt.Println("Server running on http://localhost:8080")
+	fmt.Println(quote.Go(),"Server running on http://localhost:8080")
 	http.ListenAndServe(":8080", nil)
 }
