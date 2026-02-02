@@ -8,7 +8,7 @@ import (
 )
 
 
-func main(){
+func mains(){
 	http.HandleFunc("/ping",pingHandler)
 	log.Println("server running ")
 	log.Fatal(http.ListenAndServe(":8080",nil))
